@@ -1,6 +1,6 @@
 spring:
   application:
-    name: vole-passport
+    name: vole-monitor
   profiles:
     active: dev
   cloud:
@@ -24,7 +24,7 @@ eureka:
     health-check-url-path: /actuator/health
   client:
     serviceUrl:
-      defaultZone: http://localhost:1025/eureka/
+      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:1025}/eureka/
 
 ---
 #开启INFO信息
@@ -40,4 +40,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://123.207.165.206:1025/eureka/
-

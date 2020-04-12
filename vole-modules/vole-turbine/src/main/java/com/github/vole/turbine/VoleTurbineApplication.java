@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
@@ -12,6 +13,7 @@ import org.springframework.cloud.netflix.turbine.EnableTurbine;
  * 监测加入：http://localhost:8600/turbine.stream
  */
 @Slf4j
+@EnableDiscoveryClient
 @SpringBootApplication
 @EnableHystrixDashboard
 @EnableTurbine    // 开启turbine

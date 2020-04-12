@@ -34,6 +34,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
+        <!--监控-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.github.xjzrc.spring.boot</groupId>
             <artifactId>elastic-job-lite-spring-boot-starter</artifactId>

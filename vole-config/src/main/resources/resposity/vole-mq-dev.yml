@@ -3,7 +3,7 @@ server:
 
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: 123.207.165.206:9092
     consumer:
       group-id: test1
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -19,14 +19,14 @@ spring:
       buffer-memory: 524288
 
   rabbitmq:
-    host: localhost
+    host: 123.207.165.206
     port: 5672
-    username: guest
-    password: guest
+    username: root
+    password: Summer900108@
 
 zebra:
   rocketmq:
-    namesrvAddr: localhost:9876
+    namesrvAddr: 123.207.165.206:9876
     producerGroupName: producerGroupName
     transactionProducerGroupName: transactionProducerGroupName
     consumerGroupName: consumerGroupName
@@ -36,5 +36,4 @@ zebra:
     consumerBatchMaxSize: 1
     consumerBroadcasting: false
     subscribe[0]: TopicTest1:TagA
-    enableHisConsumer: false
     enableHisConsumer: false

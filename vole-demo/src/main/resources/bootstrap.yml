@@ -12,26 +12,32 @@ spring:
       profile: ${spring.profiles.active}
 
 ---
+#开启DEBUG信息
+logging:
+  level:
+    org.springframework: DEBUG
 spring:
   profiles: dev
 eureka:
   instance:
     prefer-ip-address: true
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 20
+    health-check-url-path: /actuator/health
   client:
     serviceUrl:
       defaultZone: http://localhost:1025/eureka/
-    registry-fetch-interval-seconds: 10
 
 ---
+#开启INFO信息
+logging:
+  level:
+    org.springframework: INFO
 spring:
   profiles: prd
 eureka:
   instance:
     prefer-ip-address: true
+    health-check-url-path: /actuator/health
   client:
     serviceUrl:
-      defaultZone: http://localhost:1025/eureka/
-
+      defaultZone: http://123.207.165.206:1025/eureka/
 

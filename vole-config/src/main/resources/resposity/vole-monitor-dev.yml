@@ -1,6 +1,7 @@
+server:
+  port: 8411
+
 spring:
-  application:
-    name: vole-monitor
   security:
     user:
       name: admin
@@ -37,21 +38,10 @@ spring:
 #          ignore-changes: "*:UP"
 #          可自定义邮件模板
 #          template: classpath:/META-INF/spring-boot-mps-server/mail/status-changed.html
-server:
-  port: 8411
 
 # tag::configuration-eureka[]
 eureka:
-  client:
-    # 表示eureka client间隔多久去拉取服务注册信息，默认为30秒
-    registryFetchIntervalSeconds: 5
-    service-url:
-      defaultZone: ${EUREKA_SERVICE_URL:http://localhost:1025}/eureka/
   instance:
-    # 表示eureka client发送心跳给server端的频率，默认为30秒
-    leaseRenewalIntervalInSeconds: 20
-#     健康检查的地址（依赖spring-boot-starter-actuator）
-    health-check-url-path: /actuator/health
     # 放入请求头，向此服务发送请求，访问此服务的 Actuator 开放的端点
     metadata-map:
       # These two are needed so that the server
@@ -67,4 +57,3 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-# end::configuration-eureka[]
