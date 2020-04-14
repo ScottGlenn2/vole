@@ -1,0 +1,20 @@
+server:
+  port: 8600
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+
+turbine:
+  app-config: vole-mps,vole-demo,vole-passport,vole-auth,vole-gateway,vole-portal,vole-portal-data
+  aggregator:
+    # turbine聚集数据的粒度
+    clusterConfig: default
+  clusterNameExpression: new String("default")
+  combine-host-port: true

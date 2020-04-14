@@ -1,0 +1,39 @@
+server:
+  port: 8999
+
+spring:
+  kafka:
+    bootstrap-servers: 123.207.165.206:9092
+    consumer:
+      group-id: test1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    template:
+      default-topic: test1
+    listener:
+      concurrency: 3
+    producer:
+      batch-size: 1000
+      key-serializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer:  org.apache.kafka.common.serialization.StringDeserializer
+      buffer-memory: 524288
+
+  rabbitmq:
+    host: 123.207.165.206
+    port: 5672
+    username: root
+    password: Summer900108@
+
+zebra:
+  rocketmq:
+    namesrvAddr: 123.207.165.206:9876
+    producerGroupName: producerGroupName
+    transactionProducerGroupName: transactionProducerGroupName
+    consumerGroupName: consumerGroupName
+    producerInstanceName: producerInstanceName
+    consumerInstanceName: consumerInstanceName
+    producerTranInstanceName: producerTranInstanceName
+    consumerBatchMaxSize: 1
+    consumerBroadcasting: false
+    subscribe[0]: TopicTest1:TagA
+    enableHisConsumer: false

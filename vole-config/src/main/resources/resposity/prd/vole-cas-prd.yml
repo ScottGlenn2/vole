@@ -1,0 +1,22 @@
+server:
+  port: 8998
+
+security:
+  cas:
+    server:
+      host: http://192.168.1.202:9082/cas
+      login: ${security.cas.server.host}/login
+      logout: ${security.cas.server.host}/logout
+    service:
+      host: http://localhost:9088
+      login: /login/cas
+      logout: /logout
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"

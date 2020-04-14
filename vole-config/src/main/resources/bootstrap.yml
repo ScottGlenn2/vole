@@ -6,11 +6,6 @@ spring:
     name: vole-config-server
   profiles:
     active: native
-  cloud:
-    config:
-      server:
-        native:
-          search-locations: classpath:/resposity
 
 ---
 #开启DEBUG信息
@@ -19,13 +14,19 @@ logging:
     org.springframework: DEBUG
 spring:
   profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/resposity/${spring.cloud.config.profile}
+      profile: prd
 eureka:
   instance:
     prefer-ip-address: true
     health-check-url-path: /actuator/health
   client:
     serviceUrl:
-      defaultZone: http://localhost:1025/eureka/
+      defaultZone: http://123.207.165.206:1025/eureka/
 
 ---
 #开启INFO信息
@@ -33,7 +34,14 @@ logging:
   level:
     org.springframework: INFO
 spring:
-  profiles: prd
+  profiles: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gavenwangcn/springcloudconfig.git
+          search-paths: respo
+      profile: prd
 eureka:
   instance:
     prefer-ip-address: true
