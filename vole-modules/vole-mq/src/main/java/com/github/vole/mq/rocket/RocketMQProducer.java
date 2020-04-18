@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Rocket Demo: 生产者
  */
-@RestController
+//@RestController
 public class RocketMQProducer {
     @Autowired
     private DefaultMQProducer defaultProducer;

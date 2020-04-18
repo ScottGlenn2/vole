@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Rocket Demo: 消费者
  */
 @Slf4j
-@Component
+//@Component
 public class RocketMQConsumer {
     @EventListener(condition = "#event.msgs[0].topic=='TopicTest1' && #event.msgs[0].tags=='TagA'")
     public void rocketmqMsgListen(RocketmqEvent event) {
