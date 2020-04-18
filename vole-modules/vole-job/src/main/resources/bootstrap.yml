@@ -2,8 +2,11 @@ spring:
   application:
     name: vole-job
   profiles:
-    active: dev
+    active: prd
   cloud:
+    inetutils:
+      ignored-interfaces: 172.21.*.*,127.0.0.1,localhost
+      preferred-networks[0]: 123.207.165.206
     config:
       fail-fast: true
       discovery:

@@ -6,42 +6,31 @@ spring:
     name: vole-config-server
   profiles:
     active: native
-
----
-#开启DEBUG信息
-logging:
-  level:
-    org.springframework: DEBUG
-spring:
-  profiles: native
+            ,cloud
   cloud:
+    inetutils:
+      ignored-interfaces: 172.21.*.*,127.0.0.1,localhost
+      preferred-networks[0]: 123.207.165.206
     config:
       server:
         native:
-          search-locations: classpath:/resposity/${spring.cloud.config.profile}
-      profile: prd
-eureka:
-  instance:
-    prefer-ip-address: true
-    health-check-url-path: /actuator/health
-  client:
-    serviceUrl:
-      defaultZone: http://123.207.165.206:1025/eureka/
+          search-locations: ./config-repo/vole/{profile}/
+                            ,./config-repo/gcm/{profile}/
+                            ,./config-repo/thm/{profile}/
+          order: 1
+        git:
+          #proxy: proxy6.taikanglife.com:8080
+          #username:
+          #password:
+          uri: https://github.com/gavenwangcn/springcloudconfig.git
+          #basedir: ./config-repo
+          search-paths: respo
+          order: 2
 
----
 #开启INFO信息
 logging:
   level:
     org.springframework: INFO
-spring:
-  profiles: git
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/gavenwangcn/springcloudconfig.git
-          search-paths: respo
-      profile: prd
 eureka:
   instance:
     prefer-ip-address: true

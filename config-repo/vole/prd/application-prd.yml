@@ -9,10 +9,6 @@ server:
     min-spare-threads: 50 # Minimum amount of worker threads
 
 spring:
-  cloud:
-    inetutils:
-      ignored-interfaces: 172.21.*.*,127.0.0.1,localhost
-      preferred-networks[0]: 123.207.165.206
   redis:
     host: 123.207.165.206
     port: 6379
