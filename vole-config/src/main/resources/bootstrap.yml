@@ -9,8 +9,7 @@ spring:
             ,cloud
   cloud:
     inetutils:
-      ignored-interfaces: 172.21.*.*,127.0.0.1,localhost
-      preferred-networks[0]: 123.207.165.206
+      preferred-networks: 123.207.165.206
     config:
       server:
         native:

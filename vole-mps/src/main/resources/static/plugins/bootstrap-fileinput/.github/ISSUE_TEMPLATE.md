@@ -1,6 +1,6 @@
 ## Prerequisites
 
-- [ ] I have searched for similar issues in both open and closed tickets and cannot find a duplicate.
+- [ ] I have searched for similar issues in both open and closed stations and cannot find a duplicate.
 - [ ] The issue still exists against the latest `master` branch of bootstrap-fileinput.
 - [ ] This is not an usage question. I confirm having read the plugin [documentation](http://plugins.krajee.com/file-input) and [demos](http://plugins.krajee.com/file-input/demo).
 - [ ] This is not a general programming / coding question. (Those should be directed to the [webtips Q & A forum](http://webtips.krajee.com/questions)).

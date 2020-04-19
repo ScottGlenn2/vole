@@ -25,6 +25,9 @@ ignore:
     - /metrics/**
     - /loggers/**
 
+station_names:
+  pathname: home/vole/static/12306/station_names.txt
+
 
 
 

@@ -13,4 +13,4 @@ The following changes were made
 -
 
 ## Related Issues
-If this is related to an existing ticket, include a link to it as well.
+If this is related to an existing station, include a link to it as well.

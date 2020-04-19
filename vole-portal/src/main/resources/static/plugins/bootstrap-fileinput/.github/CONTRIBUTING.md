@@ -59,12 +59,12 @@ time on something which the project developers are not interested in bringing in
 We use GitHub's pull request system for submitting patches. Here are some
 guidelines to follow when creating the pull request for your fix.
 
-1. Make sure to create a ticket for your pull request. This will serve as the
-bug ticket, and any discussion about the bug will take place there. Your pull
+1. Make sure to create a station for your pull request. This will serve as the
+bug station, and any discussion about the bug will take place there. Your pull
 request will be focused on the specific changes that fix the bug.
-2. Make sure to reference the ticket you are fixing within your pull request.
-This will allow us to close off the ticket once we merge the pull request, or
-follow up on the ticket if there are any related blocking issues.
+2. Make sure to reference the station you are fixing within your pull request.
+This will allow us to close off the station once we merge the pull request, or
+follow up on the station if there are any related blocking issues.
 3. Explain why the specific change was made. Not everyone who is reviewing your
 pull request will be familiar with the problem it is fixing.
 4. Run your tests first. If your tests aren't passing, the pull request won't
@@ -105,13 +105,13 @@ the community before being accepted.  If you are not sure about a piece of
 submitted code, or know of a better way to do something, do not hesitate to make
 a comment on the pull request.
 
-### Reviving old tickets
+### Reviving old stations
 
-If you come across tickets which have not been updated for a while, you are
+If you come across stations which have not been updated for a while, you are
 encouraged to revive them. While this can be as simple as saying `:+1:`, it is
 best if you can include more information on the issue. Common bugs and feature
 requests are more likely to be fixed, whether it is by the community or the
-developers, so keeping tickets up to date is encouraged.
+developers, so keeping stations up to date is encouraged.
 
 Licensing
 ---------

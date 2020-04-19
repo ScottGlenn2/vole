@@ -25,6 +25,8 @@ ignore:
     - /metrics/**
     - /loggers/**
 
+station_names:
+  pathname: D:/12306/station_names.txt
 
 
 

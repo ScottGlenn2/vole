@@ -42,7 +42,7 @@ ignore:
     - /favicon.ico
 
 passport:
-  defaultRedirectUrl: http://localhost:1025
+  defaultRedirectUrl: http://123.207.165.206:1025
 
 
 

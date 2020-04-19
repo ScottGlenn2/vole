@@ -137,4 +137,4 @@ ignore:
 
 security:
   passport:
-    defaultRedirectUrl: http://localhost:7007/passport/login
+    defaultRedirectUrl: http://123.207.165.206:7007/passport/login

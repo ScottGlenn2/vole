@@ -4,11 +4,11 @@ server:
 security:
   cas:
     server:
-      host: http://192.168.1.202:9082/cas
+      host: http://123.207.165.206:4040/cas
       login: ${security.cas.server.host}/login
       logout: ${security.cas.server.host}/logout
     service:
-      host: http://localhost:9088
+      host: http://123.207.165.206:8998
       login: /login/cas
       logout: /logout
 

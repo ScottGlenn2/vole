@@ -11,16 +11,16 @@ security:
     client:
       clientId: vole
       clientSecret: vole
-      accessTokenUri: http://localhost:7001/oauth/cookie
-      userAuthorizationUri: http://localhost:7001/oauth/authorize
+      accessTokenUri: http://123.207.165.206:7001/oauth/cookie
+      userAuthorizationUri: http://123.207.165.206:7001/oauth/authorize
 #      clientAuthenticationScheme: form
       scope: server
     resource:
 #      jwt:
 #        key-uri:  http://localhost:7001/oauth/token_key
-      user-info-uri:  http://localhost:7001/authentication/member
+      user-info-uri:  http://123.207.165.206:7001/authentication/member
       preferTokenInfo: true
-      token-info-uri: http://localhost:7001/oauth/check_token
+      token-info-uri: http://123.207.165.206:7001/oauth/check_token
 
 spring:
   datasource:
