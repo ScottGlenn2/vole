@@ -1,8 +1,5 @@
 package com.github.vole.demo.service.impl;
 
-//import feign.Request;
-//import feign.Response;
-//import feign.okhttp.OkHttpClient;
 import com.alibaba.fastjson.JSONObject;
 import com.github.vole.common.utils.StringUtil;
 import com.github.vole.demo.model.ResponseInfo;
@@ -14,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
@@ -25,8 +21,8 @@ import java.util.concurrent.TimeUnit;
 @Service
 public class ReadStationsServiceImpl implements ReadStationsService {
 
-    @Value("${station_names.pathname}")
-    public String pathname;
+//    public static String pathname = "D:/12306/station_names.txt";
+    public static String pathname = "/home/vole/static/12306/station_names.txt";
     private String prefer = "k128";
     private String train_date = "2020-04-30";
     private String startStationCode = "TJP";
@@ -45,16 +41,6 @@ public class ReadStationsServiceImpl implements ReadStationsService {
     static {
         initNameCode();
     }
-    //创建 SingleObject 的一个对象
-    private static ReadStationsServiceImpl instance = new ReadStationsServiceImpl();
-
-    //让构造函数为 private，这样该类就不会被实例化
-    private ReadStationsServiceImpl(){}
-
-    //获取唯一可用的对象
-    public static ReadStationsServiceImpl getInstance(){
-        return instance==null?new ReadStationsServiceImpl():instance;
-    }
     // TODO 账号登陆获取cookie
 
     // TODO 将stations_names存储到缓存中
@@ -62,7 +48,7 @@ public class ReadStationsServiceImpl implements ReadStationsService {
 
     public static void main(String[] args) {
         //获取唯一可用的对象
-        ReadStationsServiceImpl readStationsService = ReadStationsServiceImpl.getInstance();
+        ReadStationsServiceImpl readStationsService = new ReadStationsServiceImpl();
         log.info(String.valueOf(readStationsService.readStations(readStationsService.train_date,readStationsService.startStationCode,
                 readStationsService.arriveStationCode, readStationsService.prefer)));
     }
@@ -269,9 +255,7 @@ public class ReadStationsServiceImpl implements ReadStationsService {
     //    从本地文件读取 站名与站编码
     private static void initNameCode(){
         try {
-            //获取唯一可用的对象
-            ReadStationsServiceImpl readStationsService = ReadStationsServiceImpl.getInstance();
-            String fileRead = fileRead(readStationsService.pathname);
+            String fileRead = fileRead(pathname);
             String[] stationsStr = fileRead.split("@");
             // 以@分割的第一组是空，所以下标从1开始
             for (int i = 1; i < stationsStr.length; i++) {
