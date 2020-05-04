@@ -28,7 +28,7 @@ public class DemoController {
     }
 
     @RequestMapping("/ticketInfo")
-    public List<TicketInfo> queryTJ(String a, String b, String c, String d){
+    public String queryTJ(String a, String b, String c, String d){
         return readStationsService.readStations(a, b, c, d);
     }
 }
